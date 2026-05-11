@@ -57,8 +57,44 @@ const Landing = () => {
         color: "rgba(255, 255, 255, 0.7)",
         backgroundColor: "transparent",
         boxShadow: "none",
+        backdropFilter: "blur(0px)",
+        webkitBackdropFilter: "blur(0px)",
       });
 
+      // navbar — completa en 150px de scroll (independiente del pin)
+      gsap.to(nav, {
+        scrollTrigger: {
+          trigger: pin,
+          start: "top top",
+          end: "+=150",
+          scrub: true,
+        },
+        top: "1.5rem",
+        width: "90vw",
+        backgroundColor: "rgba(255, 255, 255, 0.4)",
+        color: "#333357",
+        boxShadow: "0 4px 24px rgba(0,0,0,0.12)",
+        borderColor: "rgba(255, 255, 255, 0.2)",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        backdropFilter: "blur(10px)",
+        webkitBackdropFilter: "blur(10px)",
+        ease: "circ.inOut",
+      });
+
+      // nombres — desaparecen en 150px de scroll
+      gsap.to(names, {
+        scrollTrigger: {
+          trigger: pin,
+          start: "top top",
+          end: "+=150",
+          scrub: true,
+        },
+        autoAlpha: 0,
+        ease: "power1.out",
+      });
+
+      // pin timeline — solo para las imágenes
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: pin,
@@ -66,41 +102,10 @@ const Landing = () => {
           end: "bottom top",
           scrub: true,
           pin: true,
-          // markers: true,
         },
       });
 
-      // animación de la navbar
-      tl.to(
-        nav,
-        {
-          top: "1.5rem", // sube de ~2rem a ~4px
-          width: "90vw",
-          duration: 0.2,
-          backgroundColor: "rgba(255, 255, 255, 0.4)", // fondo blanco semitransparente
-          color: "#333357",
-          boxShadow: "0 4px 24px rgba(0,0,0,0.12)",
-          borderColor: "rgba(255, 255, 255, 0.2)", // borde blanco semitransparente
-          borderWidth: "1px",
-          borderStyle: "solid",
-          backdropFilter: "blur(10px)", // efecto de desenfoque
-          ease: "circ.inOut",
-        },
-        "<",
-      );
-
-      // animación de los nombres
-      tl.to(
-        names,
-        {
-          duration: 0.2,
-          autoAlpha: 0, // opacity + visibility, fade suave
-          ease: "power1.out",
-        },
-        "<",
-      );
-
-      // animación de la imagen principal
+      // imagen principal — ocupa todo el pin
       tl.from(
         primaryImage,
         {
@@ -111,61 +116,21 @@ const Landing = () => {
         "<",
       );
 
-      // animación de las imágenes complementarias
+      // imágenes complementarias — con duración acotada + stagger
       tl.from(
-        complemntaryImageOne,
+        [complemntaryImageOne, complemntaryImageTwo, complemntaryImageThree, complemntaryImageFour],
         {
-          x: -250,
-          y: -350,
+          x: (i: number) => [-250, -100, 250, 100][i],
+          y: (i: number) => [-350, 200, -350, 200][i],
           scale: 0.7,
           opacity: 0,
-          rotation: -4,
+          rotation: (i: number) => [-4, -2, 4, 2][i],
+          duration: 0.5,
           ease: "power3.out",
+          stagger: { each: 0.1, from: 'random' },
         },
-        "<0.1"
+        "<0.1",
       );
-      tl.from(
-        complemntaryImageTwo,
-        {
-          x: -100,
-          y: 200,
-          scale: 0.7,
-          opacity: 0,
-          rotation: -2,
-          ease: "power3.out",
-        },
-        "<"  
-      );
-      tl.from(
-        complemntaryImageThree,
-        {
-          x: 250,
-          y: -350,
-          scale: 0.7,
-          opacity: 0,
-          rotation: 4,
-          ease: "power3.out",
-        },
-        "<",
-      );
-      tl.from(
-        complemntaryImageFour,
-        {
-          x: 100,
-          y: 200,
-          scale: 0.7,
-          opacity: 0,
-          rotation: 2,
-          ease: "power3.out",
-        },
-        "<",
-      );
-
-      // al finalizar, fontWeight: "600", // de font-semibold → font-bold
-      // tl.to(nav, {
-      //   fontWeight: "600",
-      //   ease: "power1.out",
-      // })
     },
     {
       dependencies: [
@@ -174,6 +139,9 @@ const Landing = () => {
         pinRef,
         namesRef,
         complemntaryImageOneRef,
+        complemntaryImageTwoRef,
+        complemntaryImageThreeRef,
+        complemntaryImageFourRef,
       ],
     },
   );
@@ -223,25 +191,25 @@ const Landing = () => {
         </div>
 
         {/* complementary images section right */}
-        <div
-          ref={complemntaryImageThreeRef}
-          className="absolute inset-0 mx-auto w-[25%] h-[34%] top-[12%] left-[63%]"
+         <div
+          ref={complemntaryImageFourRef}
+          className="absolute inset-0 mx-auto w-[25%] h-[48%] top-[49%] left-[63%]"
         >
           <Image
-            src="/images/sam/sam-1.webp"
+            src="/images/sam/sam-2.webp"
             alt="Wedding"
             fill
             className="object-cover rounded-2xl shadow-xl"
             priority
           />
         </div>
-
+        
         <div
-          ref={complemntaryImageFourRef}
-          className="absolute inset-0 mx-auto w-[25%] h-[48%] top-[49%] left-[63%]"
+          ref={complemntaryImageThreeRef}
+          className="absolute inset-0 mx-auto w-[25%] h-[34%] top-[12%] left-[63%]"
         >
           <Image
-            src="/images/sam/sam-2.webp"
+            src="/images/sam/sam-1.webp"
             alt="Wedding"
             fill
             className="object-cover rounded-2xl shadow-xl"
