@@ -1,4 +1,5 @@
 export interface NavigationItem {
+  id: number;
   href: string;
   label: string;
 }

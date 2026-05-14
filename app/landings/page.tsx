@@ -51,6 +51,12 @@ const Landing = () => {
       boxShadow: "none",
     });
 
+    gsap.set('.nav-button-3', {
+      backgroundColor: "transparent",
+      color: "rgba(255, 255, 255, 0.7)",
+      padding: "0.5rem 1.5rem",
+    });
+
     gsap.to(nav, {
       scrollTrigger: {
         trigger: pin,
@@ -69,6 +75,19 @@ const Landing = () => {
       backdropFilter: "blur(10px)",
       ease: "circ.inOut",
     });
+
+    gsap.to('.nav-button-3', {
+      scrollTrigger: {
+        trigger: pin,
+        start: "top top",
+        end: "+=150",
+        scrub: 0.7,
+      },
+      backgroundColor: "#C4603B",
+      color: "#fff",
+      padding: "0.5rem 1.5rem",
+      ease: "sine.inOut",
+    })
 
     gsap.to(names, {
       scrollTrigger: {

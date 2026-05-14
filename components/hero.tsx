@@ -62,7 +62,7 @@ const Hero = ({
           className="absolute inset-0 mx-auto w-[25%] h-[48%] top-[49%] left-[63%]"
         >
           <Image
-            src="/images/sam/sam-3.webp"
+            src="/images/sam/sam-4.webp"
             alt="Wedding"
             fill
             sizes="45vw"
@@ -76,7 +76,7 @@ const Hero = ({
           className="absolute inset-0 mx-auto w-[25%] h-[34%] top-[12%] left-[63%]"
         >
           <Image
-            src="/images/sam/sam-4.webp"
+            src="/images/sam/sam-3.webp"
             alt="Wedding"
             fill
             sizes="45vw"
@@ -88,7 +88,7 @@ const Hero = ({
 
       <h1
         ref={namesRef}
-        className="text-4xl text-white/55 fixed bottom-26 left-1/10"
+        className="font-brice text-4xl text-white/55 fixed bottom-26 left-1/10"
       >
         Samantha & Armando
       </h1>
