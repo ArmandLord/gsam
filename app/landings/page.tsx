@@ -49,8 +49,6 @@ const Landing = () => {
       color: "rgba(255, 255, 255, 0.7)",
       backgroundColor: "transparent",
       boxShadow: "none",
-      backdropFilter: "blur(0px)",
-      webkitBackdropFilter: "blur(0px)",
     });
 
     gsap.to(nav, {
@@ -69,7 +67,6 @@ const Landing = () => {
       borderWidth: "1px",
       borderStyle: "solid",
       backdropFilter: "blur(10px)",
-      webkitBackdropFilter: "blur(10px)",
       ease: "circ.inOut",
     });
 

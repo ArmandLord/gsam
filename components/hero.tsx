@@ -23,6 +23,7 @@ const Hero = ({
             src="/images/sam/sam-5.webp"
             alt="Wedding"
             fill
+            sizes="85vw"
             className="object-cover rounded-2xl shadow-xl"
             priority
           />
@@ -36,6 +37,7 @@ const Hero = ({
             src="/images/sam/sam-1.webp"
             alt="Wedding"
             fill
+            sizes="45vw"
             className="object-cover rounded-2xl shadow-xl"
             priority
           />
@@ -49,6 +51,7 @@ const Hero = ({
             src="/images/sam/sam-2.webp"
             alt="Wedding"
             fill
+            sizes="45vw"
             className="object-cover rounded-2xl shadow-xl"
             priority
           />
@@ -62,6 +65,7 @@ const Hero = ({
             src="/images/sam/sam-3.webp"
             alt="Wedding"
             fill
+            sizes="45vw"
             className="object-cover rounded-2xl shadow-xl"
             priority
           />
@@ -75,6 +79,7 @@ const Hero = ({
             src="/images/sam/sam-4.webp"
             alt="Wedding"
             fill
+            sizes="45vw"
             className="object-cover rounded-2xl shadow-xl"
             priority
           />
