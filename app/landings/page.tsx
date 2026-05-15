@@ -146,8 +146,8 @@ const Landing = () => {
       scrollTrigger: {
         trigger: horizontalContainer,
         start: "top top",
-        end: "+=600vh",
-        scrub: 3,
+        end: "+=550vh",
+        scrub: 2,
         pin: true,
       },
     });

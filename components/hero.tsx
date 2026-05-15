@@ -90,7 +90,7 @@ const Hero = ({
         ref={namesRef}
         className="font-brice text-4xl text-white/55 fixed bottom-26 left-1/10"
       >
-        Samantha & Armando
+        Me casé!
       </h1>
     </>
   );

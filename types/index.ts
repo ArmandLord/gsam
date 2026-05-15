@@ -23,3 +23,9 @@ export interface HorizontalContainerProps {
   horizontalContainerRef: React.RefObject<HTMLDivElement>;
   horizontalWrapperRef: React.RefObject<HTMLDivElement>;
 }
+
+export interface GalleryImage {
+  id: number;
+  href: string;
+  alt: string;
+}
