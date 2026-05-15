@@ -91,7 +91,9 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
               src={image.href}
               alt={image.alt}
               fill
+              sizes="(max-width: 768px) 50vw, 33vw"
               className="object-cover"
+              loading="lazy"
             />
           </div>
         ))}
@@ -120,6 +122,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
               src={selectedImage.href}
               alt={selectedImage.alt}
               fill
+              sizes="90vw"
               className="object-contain"
               priority
             />

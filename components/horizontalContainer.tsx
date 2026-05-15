@@ -59,6 +59,7 @@ const HorizontalContainer = ({
             width={1000}
             height={1000}
             className="object-contain"
+            style={{ width: "auto", height: "auto" }}
           />
         </div>
 

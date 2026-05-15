@@ -21,7 +21,7 @@ const Navbar = ({ navRef, navigation }: NavbarProps) => {
           boxShadow: "none",
         }}
       >
-        <span className="text-2xl">S&A</span>
+        <span className="text-2xl">GSAP</span>
         <ul className="flex items-center justify-around w-1/4">
           {navigation.map(({ id, href, label }) => (
             <li key={id} className={buttonStyles(id)}>

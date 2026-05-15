@@ -147,7 +147,7 @@ const Landing = () => {
         trigger: horizontalContainer,
         start: "top top",
         end: "+=550vh",
-        scrub: 2,
+        scrub: 1.7,
         pin: true,
       },
     });
